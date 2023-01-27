@@ -1,0 +1,28 @@
+make_art <- function(seed, n, palette) {
+  set.seed(seed)
+  dat <- tibble( 
+    x0 = runif(n),
+    y0 = runif(n), 
+    x1 = x0 + runif(n, min = -2, max = 2),
+    y1 = y0 + runif(n, min = -4, max = 4),
+    shade = runif(n), 
+    linewidth = runif(n)
+  )
+  
+  # plot segments in various colors, using 
+  # polar coordinates and a gradient palette
+  dat |> 
+    ggplot(aes(
+      x = x0,
+      y = y0,
+      xend = x1,
+      yend = y1,
+      colour = shade,
+      linewidth = linewidth
+    )) +
+    geom_segment(show.legend = FALSE) +
+    coord_polar() +
+    scale_colour_gradientn(colours = palette) +
+    scale_size(range = c(0, 10)) + 
+    theme_void()
+}
