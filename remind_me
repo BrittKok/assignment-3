@@ -1,5 +1,0 @@
-remind_me <- function(){
-  print("Friday 27th: submit R assignment")
-  print("Friday 27th: submit happenings file at work")
-  print("Monday 30th: prepare work meeting presentation")
-}
