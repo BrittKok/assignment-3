@@ -16,9 +16,6 @@ remind_me <- function(){
   print("Monday 30th: prepare work meeting presentation")
 }
 
-rm(remind_me)
-install_github("BrittKokBrittKok/assignment-3.git/remind_me")
-
 cheat <- function(exercise){
   if (exercise == 1){
     print("grades <- rnorm(60, 7, 1)")
